@@ -1,0 +1,16 @@
+[Unit]
+Description=BLE Module by Bednarik
+
+[Service]
+ExecStart=/usr/bin/python3 /myapp/iot/bleModule.py
+TimeoutStartSec=30
+TimeoutStopSec=20
+Nice=-5
+RestartSec=5
+Restart=on-failure
+StandardOutput=syslog
+StandardError=syslog
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=multi-user.target
